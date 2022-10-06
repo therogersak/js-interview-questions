@@ -26,7 +26,7 @@ Boolean(0.0);
 Boolean(0n);
 
 // truthy value
-
+ 
 Boolean(1);
 Boolean(-1);
 Boolean(1n);
