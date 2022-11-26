@@ -5,7 +5,7 @@
 //? == and ===
 
 // 1. the double equals (==), also known as the loose equality operator
-// 2. the double equals (===), also known as the strict equality operator
+// 2. the triple equals (===), also known as the strict equality operator
 
 // -> the triple equals (===) operator compares both type and value
 
