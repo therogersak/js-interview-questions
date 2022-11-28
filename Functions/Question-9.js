@@ -20,3 +20,5 @@ console.log(numArray); // returns [6]
 
 
 Remember that Pure functions are important as they simplify unit testing without any side effects and no need for dependency injection. They also avoid tight coupling and make it harder to break your application by not having any side effects. These principles are coming together with Immutability concept of ES6 by giving preference to const over let usage.*/
+
+
