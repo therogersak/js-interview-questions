@@ -141,3 +141,131 @@ var myStr =
 multiline string \
 WOw this is \
 awosome";
+
+
+
+function randomNumberGeneratorInRange(min, max) {
+  return Math.floor(Math.random() * max - min + 1) + min;
+}
+console.log(randomNumberGeneratorInRange(10, 20))
+
+
+//: Can i use reserved words as identifiers
+
+var class = "hello"
+
+//: How do you make synchronous HTTP request
+
+function httpGet(theUrl) {
+    var xmlHttpReq = new XMLHttpRequest();
+    xmlHttpReq.open("GET", theUrl, false)  // false for synchronous request
+    xmlHttpReq.send(null);
+    return xmlHttpReq.responseText;
+}
+
+//: How do you make asynchronous HTTP request
+
+function httpGetAsync(theUrl, callback) {
+  var xmlHttpReq = new XMLHttpRequest();
+  xmlHttpReq.onreadystatechange = function () {
+    if (xmlHttpReq.readyState == 4 && xmlHttpReq.status == 200)
+      callback(xmlHttpReq.responseText);
+  };
+  xmlHttp.open("GET", theUrl, true); // true for asynchronous
+  xmlHttp.send(null);
+}
+
+
+//: How do you convert date to another timezome in javascript
+
+console.log(new Date().toLocaleString("en-GB", { timeZone: 'UTC' }));
+
+//: What are the properties used to get size of windows
+
+var WIDHT = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+
+var HEIGHT = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+
+
+//: What are the ways to execute javascript after page load
+
+window.onload || document.onload || "BODY ONLOAD"
+
+//: How do you detect a browser language preference
+
+var language = (navigator.language && navigator.language[0]) || navigator.language || navigator.userLanguage;
+
+console.log(language)
+
+//: How to convert string to title case with javascript
+
+var titleCase = function (str) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
+
+//: How do you detect javascript disabled in the page
+{/* <noscript></noscript */ }
+
+//: How do you determine two values same or not using object
+
+Object.is("hello", "hello");  // true
+Object.is(window, window);  // true
+Object.is([], []);  // true
+
+//: How do you copy properties from one object to other
+
+// Object.assign(target, ...source)
+
+const target = { a: 1, b: 2 }
+const source = { b: 3, c: 4 };
+
+const returnedTarget = Object(target, source);
+console.log(target) //  {a:1, b:3, c:4}
+
+console.log(returnedTarget) // {a:1, b:3, c:4}
+
+
+//: What is a proxy object
+
+var handler = {
+  get: function (obj, prop) {
+    return prop in obj ? obj[prop] : 100
+  }
+}
+
+var p = new Proxy({}, handler);
+p.a = 10;
+p.b = null;
+
+console.log(p.a, p.b); // 10, null
+console.log("c" in p, p.c) // false , 100
+
+
+//: How do you get enumerable key and value pairs
+
+const object = {
+  a: 1,
+  b: 2,
+  c: 3,
+}
+
+for (let [key, value] of object.entries(object)) {
+  console.log(`${key}:${value}`)
+}
+
+
+//: How do you create an object with prototype
+
+const person = {
+  name: "John",
+  age: 30,
+}
+
+const admin = Object.create(person);
+
+admin.name = "Admin"; // Remember that "name" is a property set on "admin" but not on "user" object
+
+admin.age // 30
