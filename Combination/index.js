@@ -269,3 +269,70 @@ const admin = Object.create(person);
 admin.name = "Admin"; // Remember that "name" is a property set on "admin" but not on "user" object
 
 admin.age // 30
+
+//: What is an Unary operator
+
+var x = "100";
+var y = +x;
+console.log(typeof x, typeof y); // string, number
+
+var a = "Hello";
+var b = +a;
+console.log(typeof a, typeof b); // => string, number => NaN
+
+//: How do you sort elements in an array
+
+var months = ["Jan", "May", "Feb", "Mar", "Apr"];
+months.sort();
+console.log(months);
+
+//: How do you find min and max value in an array
+
+var marks = [100, 40, 20, 40, 80, 70, 55];
+
+function findMax(...marks) {
+  return Math.max(...marks);
+}
+
+function findMin(...marks) {
+  return Math.min(...marks);
+}
+
+console.log(findMax(...marks));
+console.log(findMin(...marks));
+
+//: How do find min/max values without Math functions
+
+var num = [1, 20, 50, 100, 5680, 48435, 895438];
+
+var marks = [50, 20, 70, 60, 45, 30];
+function findMin(arr) {
+  var length = arr.length;
+  var min = Infinity;
+  while (length--) {
+    if (arr[length] < min) {
+      min = arr[len];
+    }
+  }
+  return min;
+}
+
+function findMax(arr) {
+  var length = arr.length;
+  var max = -Infinity;
+  while (len--) {
+    if (arr[length] > max) {
+      max = arr[length];
+    }
+  }
+  return max;
+}
+
+console.log(findMin(num));
+console.log(findMax(num));
+
+//: What is comma operator
+
+var x = 1;
+x = (x++, x);
+console.log(x); // 2
