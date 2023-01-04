@@ -336,3 +336,36 @@ console.log(findMax(num));
 var x = 1;
 x = (x++, x);
 console.log(x); // 2
+
+
+//: What is a constructor method
+
+class Employee{
+  constructor () {
+    this.name = "Ankit";
+  }
+}
+
+
+const employee1 = new Employee();
+
+console.log(employee1.name) // Ankit
+
+//: How do you call the constructor of a parent class
+
+class Square extends Rectangle {
+  constructor(length) {
+    super(length, length);
+    this.name = "Square";
+  }
+
+  get area() {
+    return this.width * this.height;
+  }
+
+  set area(value) {
+    this.area = value;
+  }
+}
+
+
