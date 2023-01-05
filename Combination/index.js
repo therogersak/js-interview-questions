@@ -369,3 +369,30 @@ class Square extends Rectangle {
 }
 
 
+//: How do you check whether an array includes a particular value or not?
+
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.includes(2))  // true
+
+
+//: How do you compare scalar arrays
+
+const num = [1, 2, 3, 4, 5]
+const secondNum = [1, 2, 3, 4, 5]
+
+console.log(num.length === secondNum.length && num.every((value, i) => value === secondNum[i])) 
+
+//: How do you print numbers with commas as thousands separators
+
+const numbers = 2328742384;
+console.log(numbers.toLocaleString())
+
+
+//: How do you convert character to ASCII code
+
+"ABC".charCodeAt(0) // return 65
+
+//* Wheareas String.fromCharCode() method converts numbers to equal ASCII characters.
+
+String.fromCharCode(65, 66, 67) // return "ABC"
+
