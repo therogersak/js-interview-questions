@@ -394,5 +394,4 @@ console.log(numbers.toLocaleString())
 
 //* Wheareas String.fromCharCode() method converts numbers to equal ASCII characters.
 
-String.fromCharCode(65, 66, 67) // return "ABC"
-
+String.fromCharCode(65, 66, 67) // return "ABC
